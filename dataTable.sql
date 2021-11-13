@@ -6,7 +6,8 @@ CREATE TABLE GunType (
     t_gunCalibur VARCHAR(255),
     t_gunName VARCHAR(255),
     t_fireMode VARCHAR(255)
-
+    t_RoF INTEGER,
+    t_gunType VARCHAR(255)
 );
 
 CREATE TABLE Vendors (
@@ -61,6 +62,318 @@ CREATE TABLE GrenadeData (
 
 );
 
+--
+CREATE TABLE GunType (
+    t_gunCalibur VARCHAR(255),
+    t_gunName VARCHAR(255),
+    t_fireMode VARCHAR(255)
+
+);
+
+
+----------------------------------
+-- .300 Blackout
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES (".300mm", "MCX","Single Full-Auto", 800, "AR");
+
+-------------------------------------------
+-- 12.7x55mm
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("12.7x55mm", "ASh-12","Single Full-Auto", 650, "AR");
+
+--------------------------------------
+-- 5.45x39
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("5.45x39mm", "AK-105","Single Full-Auto", 600, "AR");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("5.45x39mm", "AK-74","Single Full-Auto", 650, "AR");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("5.45x39mm", "AK-74M","Single Full-Auto", 650, "AR");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("5.45x39mm", "AK-74N","Single Full-Auto", 650, "AR");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("5.45x39mm", "AKS-74","Single Full-Auto", 650, "AR");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("5.45x39mm", "AKS-74N","Single Full-Auto", 650, "AR");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("5.45x39mm", "AKS-74U","Single Full-Auto", 650, "AR");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("5.45x39mm", "AKS-74UB","Single Full-Auto", 650, "AR");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("5.45x39mm", "AKS-74UN","Single Full-Auto", 650, "AR");
+
+---------------------------------------------
+-- 5.56 Guns
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("5.56x45mm", "ADAR 2-15","Single", 800, "AR");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("5.56x45mm", "AK-101","Single Full-Auto", 650, "AR");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("5.56x45mm", "AK-102","Single Full-Auto", 600, "AR");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("5.56x45mm", "DT MDR 5.56","Single Full-Auto", 650, "AR");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("5.56x45mm", "HK 416A5","Single Full-Auto", 850, "AR");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("5.56x45mm", "M4A1","Single Full-Auto", 800, "AR");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("5.56x45mm", "TX-15 DML","Single", 800, "AR");
+
+---------------------------------------------------
+-- 7.62x39mm
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("7.62x39mm", "AKM","Single Full-Auto", 600, "AR");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("7.62x39mm", "AKMN","Single Full-Auto", 600, "AR");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("7.62x39mm", "AKMS","Single Full-Auto", 600, "AR");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("7.62x39mm", "AKMSN","Single Full-Auto", 600, "AR");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("7.62x39mm", "Mk. 47","Single Full-Auto", 650, "AR");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("7.62x39mm", "Vepr KM / VPO-136","Single Full-Auto", 600, "AR");
+
+-----------------------------------------------------------------------
+-- 7.62x51mm
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("7.62x51mm", "DT MDR .308","Single Full-Auto", 650, "AR");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("7.62x51mm", "SA-58","Single Full-Auto", 700, "AR");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("7.62x51mm", "Vepr AKM / VPO-209","Single", 600, "AR");
+
+-----------------------------------------------------------------------
+-- 9x39mm
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("9x39mm", "AS Val","Single Full-Auto", 650, "AR");
+
+------------------------------------------------------------------------
+-- Assualt Carbines
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("7.62x39mm", "OP-SKS","Single", 40, "AC");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("7.62x39mm", "SKS","Single", 40, "AC");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("7.62x39mm", "Vepr Hunter / VPO-101","Single", 600, "AC");
+
+-----------------------------------------------------------------------
+-- LMG
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("5.45x39mm", "RPK","Single Full-Auto", 650, "LMG");
+
+-----------------------------------------------------------------------
+-- SMGs
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("9x19mm", "MP5","Single 3-Round Burst Full-Auto", 800, "SMGs");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("9x19mm", "MP5K-N","Single 3-Round Burst Full-Auto", 900, "SMGs");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("4.6x30mm", "MP7A1","Single Full-Auto", 950, "SMGs");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("4.6x30mm", "MP7A2","Single Full-Auto", 950, "SMGs");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("9x19mm", "MP9","Single Full-Auto", 900, "SMGs");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("9x19mm", "MP9-N","Single Full-Auto", 1100, "SMGs");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("9x19mm", "MPX","Single Full-Auto", 850, "SMGs");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("5.7x28mm", "MP9","Single Full-Auto", 900, "SMGs");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("9x19mm", "PP-19-01 Vityaz-SN","Single Full-Auto", 700, "SMGs");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("9x19mm", "PP-9 'Klin'","Single Full-Auto", 1000, "SMGs");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("9x18mm", "PP-91 'Kedr'","Single Full-Auto", 900, "SMGs");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("9x18mm", "PP-91 'Kedr-B'","Single Full-Auto", 900, "SMGs");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("7.62x25mm", "PPSH-41","Single Full-Auto", 1000, "SMGs");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("9x19mm", "Saiga-9","Single", 650, "SMGs");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("9x19mm", "STM-9","Single", 800, "SMGs");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES (".45 ACP", "UMP 45","Single Full-Auto", 600, "SMGs");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES (".45 ACP", "Vector .45","Single 2-round Burst Full-Auto", 1100, "SMGs");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("9x19mm", "Vector 9x19","Single 2-round Burst Full-Auto", 950, "SMGs");
+
+------------------------------------------------------------------------------
+-- SG
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("12/70mm", "590A1","Single (Pump action)", 30, "SG");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("12/70mm", "M879","Single (Pump action)", 30, "SG");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("12/70mm", "MP-133","Single (Pump action)", 30, "SG");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("12/70mm", "MP-153","Single", 40, "SG");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("12/70mm", "MP-155","Single", 40, "SG");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("12/70mm", "Saiga-12","Single", 40, "SG");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("20/70mm", "TOZ-106","Single", 30, "SG (Bolt action)");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("23/75mm", "KS23M","Single", 30, "SG (Pump action)");
+
+-------------------------------------------------------------------------
+-- DMR
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("7.62x51mm", "M1A", "Single", 700, "DMR");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES (".338", "Mk-18", "Single", 30, "DMR");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("7.62x51mm", "RFB", "Single", 700, "DMR");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("7.62x51mm", "RSASS", "Single", 700, "DMR");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("7.62x51mm", "SR-25", "Single", 700, "DMR");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("7.62x54Rmm", "SVDS", "Single", 700, "DMR");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("9.39mm", "VSS", "Single Full-Auto", 900, "DMR");
+
+------------------------------------------------------------------------------------
+-- Sniper Rifle
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("7.62x51mm", "DVL-10", "Single (Bolt action)", 30, "Sniper Rifle");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("7.62x51mm", "M700", "Single (Bolt action)", 30, "Sniper Rifle");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("7.62x54Rmm", "Mosin", "Single (Bolt action)", 30, "Sniper Rifle");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("7.62x54Rmm", "Mosin Inf.", "Single (Bolt action)", 30, "Sniper Rifle");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("7.62x54Rmm", "SV-98", "Single (Bolt action)", 30, "Sniper Rifle");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("7.62x51mm", "T-5000", "Single (Bolt action)", 30, "Sniper Rifle");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES (".366", "VPO-215", "Single (Bolt action)", 30, "Sniper Rifle");
+
+-----------------------------------------------------------------------------------
+-- Pistol
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("9x18mm", "APB", "Single Full-Auto", 750, "Pistol");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("9x18mm", "APS", "Single Full-Auto", 750, "Pistol");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("5.7x28mm", "FN 5-7", "Single", 30, "Pistol");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("9x19mm", "GLOCK17", "Single", 30, "Pistol");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("9x19mm", "GLOCK18C", "Single Full-Auto", 1200, "Pistol");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES (".45 ACP", "M1911A1", "Single", 30, "Pistol");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES (".45 ACP", "M45A1", "Single", 30, "Pistol");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("9x19mm", "M9A3", "Single", 30, "Pistol");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("9x19mm", "MP-443 'Grach'", "Single", 30, "Pistol");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("9x19mm", "MP-443 'Grach'", "Single", 30, "Pistol");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("9x19mm", "P226R", "Single", 30, "Pistol");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("9x18mm", "PB pistol", "Single", 30, "Pistol");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("9x19mm", "PL-15", "Single", 30, "Pistol");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("9x18mm", "PM (t) pistol", "Single", 30, "Pistol");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("9x18mm", "PM pistol", "Single", 30, "Pistol");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("9x21mm", "SR-1MP Gyurza", "Single", 30, "Pistol");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("7.62x25mm", "TT pistol", "Single", 30, "Pistol");
+
+INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
+VALUES ("7.62x25mm", "TT pistol (gold)", "Single", 30, "Pistol");
+
+
+------------------------------------------------------
 -- Populate the Vendors
 INSERT INTO Vendors (v_vendorKey, v_vendorName)
 VALUES ("Prapor", "Pavel Yegorovich Romanenko");
@@ -136,7 +449,7 @@ INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_acc
 VALUES ("7.62x25mm", "TT Pst gzh", '50', 25, 0.36, 0, 0, 0.20, 0.10, 0, 0, 430, "", "Prapor");
 
 INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_accMod, b_recMod, b_fragChance, b_riccChn, b_lBld, b_hBld, b_velocity, b_special, b_vendorKey)
-VALUES ("7.62x25mm", "TT Pst gzh", '55', 16, 0.34, -10, 0, 0.166, 0.10, 0, 0, 415, "Tracer (Red)", "Prapor");
+VALUES ("7.62x25mm", "TT Pst gzh", '55', 16, 0.34, -10, 0, 0.166, 0.10, 0, 0, 415, "Tracer(red)", "Prapor");
 
 -------------------
 INSERT INTO Caliburs (c_gunType, c_caliburKey, c_calName)
@@ -158,7 +471,7 @@ INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_acc
 VALUES ("9x18mm", "PM PPe gzh", '61', 7, 0.15, 0, 0, 0.35, 0.05, 0.15, 0, 297, "Subsonic", "Prapor");
 
 INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_accMod, b_recMod, b_fragChance, b_riccChn, b_lBld, b_hBld, b_velocity, b_special, b_vendorKey)
-VALUES ("9x18mm", "PM PPT gzh", '59', 8, 0.22, -0.05, -0.07, 0.166, 0.10, 0.15, 0, 301, "Subsonic/Tracer(Red)", "Prapor");
+VALUES ("9x18mm", "PM PPT gzh", '59', 8, 0.22, -0.05, -0.07, 0.166, 0.10, 0.15, 0, 301, "Subsonic/Tracer(red)", "Prapor");
 
 INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_accMod, b_recMod, b_fragChance, b_riccChn, b_lBld, b_hBld, b_velocity, b_special, b_vendorKey)
 VALUES ("9x18mm", "PM PRS gs", '58', 6, 0.16, 0, 0, 0.30, 0.005, 0.15, 0, 302, "Subsonic", "Prapor");
@@ -534,7 +847,7 @@ INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_acc
 VALUES ("12/70mm", "Dual Sabot Slug", '2x85', 17, 0.65, 1, 0.15, 0.10, 0.10, 0, 0.15, 415, "", "Jaeger");
 
 INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_accMod, b_recMod, b_fragChance, b_riccChn, b_lBld, b_hBld, b_velocity, b_special, b_vendorKey)
-VALUES ("12/70mm", "Flechette", '8x25', 31, 0.26, -0.10, 0, 0, 0, 0.25, 0.25, 320, "Subsonic", "Jaeger");
+VALUES ("12/70mm", "Flechette Buckshot", '8x25', 31, 0.26, -0.10, 0, 0, 0, 0.25, 0.25, 320, "Subsonic", "Jaeger");
 
 INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_accMod, b_recMod, b_fragChance, b_riccChn, b_lBld, b_hBld, b_velocity, b_special, b_vendorKey)
 VALUES ("12/70mm", "FTX Custom Lite Slug", '183', 20, 0.50, 1.35, -0.25, 0.10, 0.10, 0, 0, 480, "", "Jaeger");
@@ -561,7 +874,7 @@ INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_acc
 VALUES ("12/70mm", "RIP", '265', 2, 0.11, 0.80, 0.35, 1, 0.01, 0.40, 0.25, 410, "", "Skier/Jaeger");
 
 INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_accMod, b_recMod, b_fragChance, b_riccChn, b_lBld, b_hBld, b_velocity, b_special, b_vendorKey)
-VALUES ("12/70mm", "RIP", '197', 26, 0.57, 0.90, 0.25, 0.05, 0.10, 0, 0.15, 410, "Tracer(red)", "Jaeger");
+VALUES ("12/70mm", ".50 BMG Slug", '197', 26, 0.57, 0.90, 0.25, 0.05, 0.10, 0, 0.15, 410, "Tracer(red)", "Jaeger");
 
 -------------------
 INSERT INTO Caliburs (c_gunType, c_caliburKey, c_calName)
@@ -605,7 +918,7 @@ INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_acc
 VALUES ("23x75mm", "'Shrapnel-10' Buckshot", '8x87', 11, 0.20, 0, 0, 0, 0.20, 0, 0, 270, "", "Prapor");
 
 INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_accMod, b_recMod, b_fragChance, b_riccChn, b_lBld, b_hBld, b_velocity, b_special, b_vendorKey)
-VALUES ("23x75mm", "'Shrapnel-10' Buckshot", '8x87', 10, 0.20, 0.20, 0.10, 0, 0.20, 0, 0, 375, "", "Prapor");
+VALUES ("23x75mm", "'Shrapnel-25' Buckshot", '8x78', 10, 0.20, 0.20, 0.10, 0, 0.20, 0, 0, 375, "", "Prapor");
 
 -------------------
 
