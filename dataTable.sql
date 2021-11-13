@@ -5,7 +5,7 @@
 CREATE TABLE GunType (
     t_gunCalibur VARCHAR(255),
     t_gunName VARCHAR(255),
-    t_fireMode VARCHAR(255)
+    t_fireMode VARCHAR(255),
     t_RoF INTEGER,
     t_gunType VARCHAR(255)
 );
@@ -13,14 +13,12 @@ CREATE TABLE GunType (
 CREATE TABLE Vendors (
     v_vendorKey VARCHAR(255),
     v_vendorName VARCHAR(255)
-
 );
 
 CREATE TABLE Caliburs (
     c_gunType VARCHAR(255),
     c_caliburKey VARCHAR (255),
     c_calName VARCHAR (255) 
-
 );
 
 CREATE TABLE BulletData(
@@ -38,9 +36,6 @@ CREATE TABLE BulletData(
     b_velocity INTEGER,
     b_special VARCHAR(255),
     b_vendorKey VARCHAR(255)
-    
-
-
 );
 
 CREATE TABLE Prices (
@@ -59,7 +54,6 @@ CREATE TABLE GrenadeData (
     g_fragCount INTEGER,
     g_fragDmg INTEGER,
     g_radius VARCHAR(255)
-
 );
 
 ----------------------------------
