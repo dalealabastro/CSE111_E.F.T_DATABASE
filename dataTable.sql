@@ -62,15 +62,6 @@ CREATE TABLE GrenadeData (
 
 );
 
---
-CREATE TABLE GunType (
-    t_gunCalibur VARCHAR(255),
-    t_gunName VARCHAR(255),
-    t_fireMode VARCHAR(255)
-
-);
-
-
 ----------------------------------
 -- .300 Blackout
 INSERT INTO GunType (t_gunCalibur, t_gunName, t_fireMode, t_RoF, t_gunType)
