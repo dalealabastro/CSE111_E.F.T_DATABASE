@@ -559,7 +559,7 @@ INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_acc
 VALUES ("4.6x30mm", "FMJ SX", '43', 40, 0.41, 0, 0, 0.20, 0.40, 0, 0, 620, "", "Peacekeeper");
 
 INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_accMod, b_recMod, b_fragChance, b_riccChn, b_lBld, b_hBld, b_velocity, b_special, b_vendorKey)
-VALUES ("4.6x30mm", "AP SX", '45', 36, 0.46, 0.10, -0.22, 0.20, 0.50, 0, 0, 290, "Subsonic", "Mechanic");
+VALUES ("4.6x30mm", "Subsonic SX", '45', 36, 0.46, 0.10, -0.22, 0.20, 0.50, 0, 0, 290, "Subsonic", "Mechanic");
 
 -------------------
 INSERT INTO Caliburs (c_gunType, c_caliburKey, c_calName)
