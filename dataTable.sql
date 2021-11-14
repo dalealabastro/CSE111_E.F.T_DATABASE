@@ -434,7 +434,7 @@ INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_acc
 VALUES ("7.62x25mm", "TT Pst gzh", '50', 25, 0.36, 0, 0, 0.20, 0.10, 0, 0, 430, "", "Prapor");
 
 INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_accMod, b_recMod, b_fragChance, b_riccChn, b_lBld, b_hBld, b_velocity, b_special, b_vendorKey)
-VALUES ("7.62x25mm", "TT Pst gzh", '55', 16, 0.34, -10, 0, 0.166, 0.10, 0, 0, 415, "Tracer(red)", "Prapor");
+VALUES ("7.62x25mm", "TT PT gzh", '55', 16, 0.34, -10, 0, 0.166, 0.10, 0, 0, 415, "Tracer(red)", "Prapor");
 
 -------------------
 INSERT INTO Caliburs (c_gunType, c_caliburKey, c_calName)
