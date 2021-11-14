@@ -543,7 +543,7 @@ INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_acc
 VALUES (".45 ACP", "ACP Lasermatch FMJ", '80', 19, 0.37, 0.10, 0, 0.01, 0.065, 0, 0, 290, "Subsonic/Tracer(red)", "Peacekeeper");
 
 INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_accMod, b_recMod, b_fragChance, b_riccChn, b_lBld, b_hBld, b_velocity, b_special, b_vendorKey)
-VALUES (".45 ACP", "ACP Hydra-Shok", '137', 3, 0.12, -0.05, 0, 1, 0.002, 0.30, 0.20, 293, "Subsonic", "Mechanic");
+VALUES (".45 ACP", "ACP RIP", '137', 3, 0.12, -0.05, 0, 1, 0.002, 0.30, 0.20, 293, "Subsonic", "Mechanic");
 
 -------------------
 INSERT INTO Caliburs (c_gunType, c_caliburKey, c_calName)
