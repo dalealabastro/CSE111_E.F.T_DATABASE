@@ -653,6 +653,9 @@ INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_acc
 VALUES ("5.56x45mm", "M995", '40', 53, 0.58, 0, 0.08, 0.32, 0.36, 0, 0, 1013, "", "FiRoC");
 
 INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_accMod, b_recMod, b_fragChance, b_riccChn, b_lBld, b_hBld, b_velocity, b_special, b_vendorKey)
+VALUES ("5.56x45mm", "MK 255 Mod 0 (RRLP)", '60', 17, 0.32, 0, 0, 0.03, 0.10, 0.10, 0.10, 902, "", "Peacekeeper");
+
+INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_accMod, b_recMod, b_fragChance, b_riccChn, b_lBld, b_hBld, b_velocity, b_special, b_vendorKey)
 VALUES ("5.56x45mm", "MK 318 Mod 0 (SOST)", '67', 20, 0.35, 0.10, 0, 0.15, 0.10, 0.10, 0.10, 902, "", "Peacekeeper");
 
 INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_accMod, b_recMod, b_fragChance, b_riccChn, b_lBld, b_hBld, b_velocity, b_special, b_vendorKey)
