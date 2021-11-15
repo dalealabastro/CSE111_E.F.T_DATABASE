@@ -891,7 +891,7 @@ VALUES ("20x70mm", "7.5mm Buckshot", '8x25', 3, 0.14, 0, 0, 0, 0, 0, 0, 430, "",
 
 -------------------
 INSERT INTO Caliburs (c_gunType, c_caliburKey, c_calName)
-VALUES ("SG", "23x75mm", "20 Gauge");
+VALUES ("SG", "23x75mm", "23 Gauge");
 
 INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_accMod, b_recMod, b_fragChance, b_riccChn, b_lBld, b_hBld, b_velocity, b_special, b_vendorKey)
 VALUES ("23x75mm", "'Barrikada' Slug", '192', 39, 0.75, -0.05, 0.25, 0.20, 0.40, 0, 0, 420, "", "Prapor");
