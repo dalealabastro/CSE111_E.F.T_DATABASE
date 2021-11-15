@@ -741,9 +741,6 @@ INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_acc
 VALUES ("7.62x54Rmm", "LPS gzh", '81', 42, 0.78, 0, 0, 0.18, 0.39, 0, 0, 865, "", "Prapor");
 
 INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_accMod, b_recMod, b_fragChance, b_riccChn, b_lBld, b_hBld, b_velocity, b_special, b_vendorKey)
-VALUES ("7.62x54Rmm", "LPS gzh", '81', 42, 0.78, 0, 0, 0.18, 0.39, 0, 0, 865, "", "Prapor");
-
-INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_accMod, b_recMod, b_fragChance, b_riccChn, b_lBld, b_hBld, b_velocity, b_special, b_vendorKey)
 VALUES ("7.62x54Rmm", "SNB", '75', 62, 0.87, 0, 0.10, 0.08, 0.285, 0, 0, 875, "", "Prapor");
 
 INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_accMod, b_recMod, b_fragChance, b_riccChn, b_lBld, b_hBld, b_velocity, b_special, b_vendorKey)
