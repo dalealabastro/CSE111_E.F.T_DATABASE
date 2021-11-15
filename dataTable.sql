@@ -1386,19 +1386,19 @@ VALUES ("Loot Only", "40x46mm M576 (MP-APERS) grenade", "Ruble", 1492);
 --Grenades--
 
 INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
-VALUES ("Prapor", "F-1 hand grenade", "Ruble", 2799);
+VALUES ("Prapor", "F-1", "Ruble", 2799);
 
 INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
-VALUES ("Prapor", "RGD-5 hand grenade", "Ruble", 3614);
+VALUES ("Prapor", "RGD-5", "Ruble", 3614);
 
 INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
-VALUES ("Peacekeeper", "M67 Hand grenade", "Ruble", 4,009);
+VALUES ("Peacekeeper", "M67", "Ruble", 4,009);
 
 INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
-VALUES ("Prapor", "VOG-17 Khattabka grenade", "Ruble", 4614);
+VALUES ("Prapor", "VOG-17", "Ruble", 4614);
 
 INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
-VALUES ("Prapor", "VOG-25 Khattabka grenade", "Ruble", 2350);
+VALUES ("Prapor", "VOG-25", "Ruble", 2350);
 
 INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
 VALUES ("Prapor", "RDG-2B", "Ruble", 2720);
