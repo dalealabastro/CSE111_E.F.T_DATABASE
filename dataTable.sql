@@ -39,9 +39,7 @@ CREATE TABLE BulletData(
 );
 
 CREATE TABLE Prices (
-    p_priceKey VARCHAR(255),
     p_vendorKey VARCHAR(255),
-    p_vendorLevel VARCHAR(225),
     p_calName VARCHAR(255),
     p_currency VARCHAR(255),
     p_price INTEGER(255)
@@ -905,6 +903,505 @@ VALUES ("23x75mm", "'Shrapnel-10' Buckshot", '8x87', 11, 0.20, 0, 0, 0, 0.20, 0,
 INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_accMod, b_recMod, b_fragChance, b_riccChn, b_lBld, b_hBld, b_velocity, b_special, b_vendorKey)
 VALUES ("23x75mm", "'Shrapnel-25' Buckshot", '8x78', 10, 0.20, 0.20, 0.10, 0, 0.20, 0, 0, 375, "", "Prapor");
 
--------------------
+----------------------------------------------------------------------------------------------------------
 
--- 
+--Shop stuff-----------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+--7.62x39mm--
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "TT AKBS", "Ruble", 49);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "TT FMJ43", "Ruble", 76);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", "TT LRN", "Ruble", 205);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", "TT LRNPC", "Ruble", 68);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "TT P gl", "Ruble", 469);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "TT Pst gzh", "Ruble", 70);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "TT PT gzh", "Ruble", 63);
+
+--9x18mm Makarov--
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "PM BZhT gzh", "Ruble", 713);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "PM P gzh", "Ruble", 36);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "PM PBM gzh", "Ruble", 470);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "PMM PstM gzh", "Ruble", 287);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "PM PPe gzh", "Ruble", 466);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "PM PPT gzh", "Ruble", 91);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "PM PRS gs", "Ruble", 39);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "PM PS gs PPO", "Ruble", 44);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "PM PSO gzh", "Ruble", 36);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "PM Pst gzh", "Ruble", 45);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", "PM PSV", "Ruble", 128);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "PM SP7 gzh", "Ruble", 498);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "PM SP8 gzh", "Ruble", 204);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "PM RG028", "Ruble", 234);
+
+--9x19mm parabellum--
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("FiRoC", "PBP gzh", "Ruble", 2212);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("FiRoC", "AP 6.3", "Ruble", 1079);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Mechanic", "T gzh", "Ruble", 197);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Skier", "Luger CCI", "Ruble", 413);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor/Jaeger", "PSO gzh", "Ruble", 105);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor/Mechanic/Peacekeeper", "Pst gzh", "Ruble", 186);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Peacekeeper", "QuakeMaker", "Ruble", 466);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Skier/Jaeger", "RIP", "Ruble", 732);
+
+--9x21mm Gyurza--
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "PS gzh", "Ruble", 589);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "P gzh", "Ruble", 191);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "PE gzh", "Ruble", 291);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "BT gzh", "Ruble", 824);
+
+--.45 ACP--
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Peacekeeper", "ACP AP", "Ruble", 2033);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Peacekeeper", "ACP Match FMJ", "Ruble", 416);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Peacekeeper", "ACP Hydra-Shok", "Ruble", 941);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Peacekeeper", "ACP Lasermatch FMJ", "Ruble", 675);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Mechanic", "ACP RIP", "Ruble", 1492);
+
+--4.6x30mm HK--
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Mechanic/Peacekeeper", "Action SX", "Ruble", 204);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("FiRoC", "AP SX", "Ruble", 2301);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Peacekeeper", "FMJ SX", "Ruble", 1474);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Mechanic", "Subsonic SX", "Ruble", 1498);
+
+--5.7x28mm FN--
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Peacekeeper", "L191", "Ruble", 1637);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Mechanic", "R37.F", "Ruble", 384);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Mechanic", "R37.X", "Ruble", 345);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Peacekeeper", "SB193", "Ruble", 1741);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Peacekeeper", "SS190", "Ruble", 1833);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Peacekeeper", "SS197SR", "Ruble", 915);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Peacekeeper", "SS198LF", "Ruble", 851);
+
+--5.45x39mm (AK)--
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("FiRoC", "PPBS gs 'Igolnik'", "Ruble", 1074);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "BP gs", "Ruble", 323);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "BS gs", "Ruble", 1209);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "BT gs", "Ruble", 532);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", "FMJ", "Ruble", 44);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", "HP", "Ruble", 97);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "PP gs", "Ruble", 137);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "PRS gs", "Ruble", 31);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "PS gs", "Ruble", 92);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", "SP", "Ruble", 88);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "T gs", "Ruble", 32);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "US gs", "Ruble", 57);
+
+--5.56x45mm NATO--
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Skier", "FMJ", "Ruble", 98);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", "HP", "Ruble", 106);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Peacekeeper", "M855", "Ruble", 315);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Peacekeeper/Skier", "M855A1", "Ruble", 2081);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Peacekeeper", "M856", "Ruble", 191);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Peacekeeper", "M856A1", "Ruble", 973);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("FiRoC", "M995", "Ruble", 3711);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Peacekeeper", "MK 255 Mod 0 (RRLP)", "Ruble", 106);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Peacekeeper", "MK 318 Mod 0 (SOST)", "Ruble", 444);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Loot Only", "SSA AP", "Ruble", 2239);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Peacekeeper/Jaeger", "Warmageddon", "Ruble", 165);
+
+
+--.300 Blackout--
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Peacekeeper", "Blackout AP", "Ruble", 1715);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Skier", "AAC Blackout BCP FMJ", "Ruble", 233);
+
+--7.62x39mm (AK)--
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "BP gzh", "Ruble", 1300);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", "HP", "Ruble", 201);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Loot Only", "MAI AP", "Ruble", 2374);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "PS gzh", "Ruble", 92);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "T-45M1 gzh", "Ruble", 68);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "US gzh", "Ruble", 562);
+
+--7.62x51mm NATO--
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", "BCP FMJ", "Ruble", 107);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Peacekeeper", "M61", "Ruble", 3093);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Peacekeeper", "M62", "Ruble", 1593);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Peacekeeper", "M80", "Ruble", 510);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Loot Only", "M993", "Ruble", 3104);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", "TCW SP", "Ruble", 132);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", "Ultra Nosler", "Ruble", 575);
+
+--7.62x54mmR--
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "BT gzh", "Ruble", 1937);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "PS", "Ruble", 867);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "BS", "Ruble", 2119);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "LPS gzh", "Ruble", 288);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "SNB", "Ruble", 880);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "T-46M", "Ruble", 271);
+
+--.338 Lapua Magnum--
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Loot Only", "AP", "Ruble", 46710);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Peacekeeper", "FMJ", "Ruble", 15320);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Mechanic", "TAC-X", "Ruble", 2016);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", "UPZ", "Ruble", 1025);
+
+--9x39mm--
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "SPP gs", "Ruble", 1240);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "BP gs", "Ruble", 1508);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "SP5 gs", "Ruble", 268);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "SP6 gs", "Ruble", 871);
+
+--.366 TKM--
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Mechanic", "AP-M", "Ruble", 513);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", "Eko", "Ruble", 157);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Skier/Jaeger", "FMJ", "Ruble", 39);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", "Geksa", "Ruble", 231);
+
+--12.7x55mm STs-130--
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "PS12", "Ruble", 280);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "PS12A", "Ruble", 275);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "PS12B", "Ruble", 1950);
+
+--12x70mm--
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", "'Poleva-3' Slug", "Ruble", 126);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", "'Poleva-6u' Slug", "Ruble", 268);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", "5.25mm Buckshot", "Ruble", 35);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", "8.5mm 'Magnum' Buckshot", "Ruble", 272);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", "AP-20 Slug", "Ruble", 1061);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", "Dual Sabot Slug", "Ruble", 236);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", "Flechette", "Ruble", 304);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", "FTX Custom Lite Slug", "Ruble", 204);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", "Grizzly 40 Slug", "Ruble", 74);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", "SuperFormance HP Slug", "Ruble", 183);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", "Copper Sabot Premier HP Slug", "Ruble", 135);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", "6.5mm Express Buckshot", "Ruble", 115);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger/Prapor/Skier", "7mm Buckshot", "Ruble", 31);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Skier/Prapor/Peacekeeper", "Lead Slug", "Ruble", 38);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Skier/Jaeger", "RIP", "Ruble", 224);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", ".50 BMG Slug", "Ruble", 663);
+
+--20x70mm--
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", "5.6mm Buckshot", "Ruble", 100);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", "6.2mm Buckshot", "Ruble", 28);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", "7.3mm Buckshot", "Ruble", 57);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", "Devastator Slug", "Ruble", 418);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", "'Poleva-3' Slug", "Ruble", 73);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", "'Poleva-6u' Slug", "Ruble", 279);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Jaeger", "Star Slug", "Ruble", 258);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Skier/Jaeger", "7.5mm Buckshot", "Ruble", 25);
+
+--23x75mm--
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "'Barrikada' Slug", "Ruble", 1182);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "'Zvezda' Flashbang round", "Ruble", 30703);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "'Shrapnel-10' Buckshot", "Ruble", 5152);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "'Shrapnel-25' Buckshot", "Ruble", 1284);
+
+--Launchable Grenades (40mm)--
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Peacekeeper", "40x46mm M381(HE) grenade", "Ruble", 52215);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Peacekeeper", "40x46mm M386 (HE) grenade", "Ruble", 9356);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Loot Only", "40x46mm M406 (HE) grenade", "Ruble", 7229);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Loot Only", "40x46mm M433 (HEDP) grenade", "Ruble", 9876);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Loot Only", "40x46mm M441(HE) grenade", "Ruble", 52636);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Loot Only", "40x46mm M576 (MP-APERS) grenade", "Ruble", 1492);
+
+--Grenades--
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "F-1 hand grenade", "Ruble", 2799);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "RGD-5 hand grenade", "Ruble", 3614);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Peacekeeper", "M67 Hand grenade", "Ruble", 4,009);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "VOG-17 Khattabka grenade", "Ruble", 4614);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "VOG-25 Khattabka grenade", "Ruble", 2350);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "RDG-2B", "Ruble", 2720);
+
+INSERT INTO Prices (p_vendorKey, p_calName, p_currency, p_price)
+VALUES ("Prapor", "Zarya", "Ruble", 3357);
