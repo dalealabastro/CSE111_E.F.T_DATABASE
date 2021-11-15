@@ -610,7 +610,7 @@ INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_acc
 VALUES ("5.45x39mm", "HP", '74', 11, 0.20, 0, 0.05, 0.25, 0.26, 0.15, 0.15, 884, "", "Jaeger");
 
 INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_accMod, b_recMod, b_fragChance, b_riccChn, b_lBld, b_hBld, b_velocity, b_special, b_vendorKey)
-VALUES ("5.45x39mm", "PP", '48', 33, 0.32, 0, 0, 0.17, 0.38, 0, 0, 890, "", "Prapor");
+VALUES ("5.45x39mm", "PP gs", '48', 33, 0.32, 0, 0, 0.17, 0.38, 0, 0, 890, "", "Prapor");
 
 INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_accMod, b_recMod, b_fragChance, b_riccChn, b_lBld, b_hBld, b_velocity, b_special, b_vendorKey)
 VALUES ("5.45x39mm", "PRS gs", '60', 14, 0.28, 0, -0.05, 0.30, 0.04, 0, 0, 890, "", "Prapor");
