@@ -832,7 +832,7 @@ INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_acc
 VALUES ("12/70mm", "Dual Sabot Slug", '2x85', 17, 0.65, 1, 0.15, 0.10, 0.10, 0, 0.15, 415, "", "Jaeger");
 
 INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_accMod, b_recMod, b_fragChance, b_riccChn, b_lBld, b_hBld, b_velocity, b_special, b_vendorKey)
-VALUES ("12/70mm", "Flechette Buckshot", '8x25', 31, 0.26, -0.10, 0, 0, 0, 0.25, 0.25, 320, "Subsonic", "Jaeger");
+VALUES ("12/70mm", "Flechette", '8x25', 31, 0.26, -0.10, 0, 0, 0, 0.25, 0.25, 320, "Subsonic", "Jaeger");
 
 INSERT INTO BulletData (b_caliburKey, b_name, b_dmg, b_penPwr, b_armorDmg, b_accMod, b_recMod, b_fragChance, b_riccChn, b_lBld, b_hBld, b_velocity, b_special, b_vendorKey)
 VALUES ("12/70mm", "FTX Custom Lite Slug", '183', 20, 0.50, 1.35, -0.25, 0.10, 0.10, 0, 0, 480, "", "Jaeger");
