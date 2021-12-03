@@ -92,13 +92,24 @@ AND     p_vendorKey = "Prapor"
 GROUP BY b_name
 ORDER BY p_price DESC;
 
--- 17
-SELECT DISTINCT  p_vendorKey ,b_name, b_dmg, p_price, p_currency
-FROM    BulletData, Prices
-WHERE   b_name = p_calName
-AND     p_vendorKey = "Prapor"
-GROUP BY b_name
-ORDER BY b_dmg DESC;
+
+------------- Most Expensive Grenade
+SELECT      v_codeName, g_priceKey, p_price
+FROM        Vendors, GrenadeData, Prices
+WHERE       v_vendorKey = p_vendorKey
+AND         p_calName = g_priceKey
+GROUP BY    p_price
+ORDER BY    p_price DESC;
+
+------------- Most Damaging Bullet
+SELECT  v_codeName, b_caliburKey, b_dmg, p_price
+FROM    Vendors, BulletData, Prices, Caliburs
+WHERE   v_vendorKey = p_vendorKey
+AND     p_calName = b_name
+AND     c_caliburKey = b_caliburKey
+AND     c_gunType != "SG"
+ORDER BY    CAST(b_dmg AS INT) DESC;
+
 
 -- List Prices 18
 SELECT  *
@@ -112,3 +123,8 @@ WHERE   p_vendorKey = "Prapor";
 -- List all guns
 Select *
 FROM GunType;
+
+--
+SELECT
+FROM MultiVendors, Vendors, BulletData
+WHERE 

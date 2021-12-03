@@ -1,0 +1,92 @@
+-- CREATE TABLE MultiVendors(
+--     mv_mvKey VARCHAR(255),
+--     mv_calKey VARCHAR(255),
+--     mv_vendorKey VARCHAR(255)
+-- );
+
+-- Multiple Vendors
+-- PSO gzh
+INSERT INTO MultiVendors(mv_calKey, mv_vendorKey)
+VALUES ("PSO gzh", 0)
+
+INSERT INTO MultiVendors(mv_calKey, mv_vendorKey)
+VALUES ("PSO gzh", 6)
+
+-- Pst gzh
+INSERT INTO MultiVendors(mv_calKey, mv_vendorKey)
+VALUES ("Pst gzh", 0)
+
+INSERT INTO MultiVendors(mv_calKey, mv_vendorKey)
+VALUES ("Pst gzh", 4)
+
+INSERT INTO MultiVendors(mv_calKey, mv_vendorKey)
+VALUES ("Pst gzh", 5)
+
+-- Pst gzh
+INSERT INTO MultiVendors(mv_calKey, mv_vendorKey)
+VALUES ("RIP", 3)
+
+INSERT INTO MultiVendors(mv_calKey, mv_vendorKey)
+VALUES ("RIP", 6)
+
+-- Action SX
+INSERT INTO MultiVendors(mv_calKey, mv_vendorKey)
+VALUES ("Action SX", 4)
+
+INSERT INTO MultiVendors(mv_calKey, mv_vendorKey)
+VALUES ("Action SX", 5)
+
+-- M855A1
+INSERT INTO MultiVendors(mv_calKey, mv_vendorKey)
+VALUES ("M855A1", 3)
+
+INSERT INTO MultiVendors(mv_calKey, mv_vendorKey)
+VALUES ("M855A1", 4)
+
+-- Warmageddon
+INSERT INTO MultiVendors(mv_calKey, mv_vendorKey)
+VALUES ("Warmageddon", 4)
+
+INSERT INTO MultiVendors(mv_calKey, mv_vendorKey)
+VALUES ("Warmageddon", 6)
+
+-- .366_FMJ
+INSERT INTO MultiVendors(mv_calKey, mv_vendorKey)
+VALUES (".366_FMJ", 4)
+
+INSERT INTO MultiVendors(mv_calKey, mv_vendorKey)
+VALUES (".366_FMJ", 6)
+
+-- 7mm Buckshot
+INSERT INTO MultiVendors(mv_calKey, mv_vendorKey)
+VALUES (".7mm Buckshot", 0)
+
+INSERT INTO MultiVendors(mv_calKey, mv_vendorKey)
+VALUES (".7mm Buckshot", 3)
+
+INSERT INTO MultiVendors(mv_calKey, mv_vendorKey)
+VALUES (".7mm Buckshot", 6)
+
+-- 7mm Buckshot
+INSERT INTO MultiVendors(mv_calKey, mv_vendorKey)
+VALUES ("Lead Slug", 0)
+
+INSERT INTO MultiVendors(mv_calKey, mv_vendorKey)
+VALUES ("Lead Slug", 3)
+
+INSERT INTO MultiVendors(mv_calKey, mv_vendorKey)
+VALUES ("Lead Slug", 4)
+
+-- 12/70_RIP
+INSERT INTO MultiVendors(mv_calKey, mv_vendorKey)
+VALUES ("12/70_RIP", 3)
+
+INSERT INTO MultiVendors(mv_calKey, mv_vendorKey)
+VALUES ("12/70_RIP", 6)
+
+-- 7.5mm Buckshot
+INSERT INTO MultiVendors(mv_calKey, mv_vendorKey)
+VALUES ("7.5mm Buckshot", 3)
+
+INSERT INTO MultiVendors(mv_calKey, mv_vendorKey)
+VALUES ("7.5mm Buckshot", 6)
