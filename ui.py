@@ -1,8 +1,7 @@
-from tkinter.constants import TRUE
-import PySimpleGUI as ui
 import sqlite3
 from sqlite3 import Error
-from PySimpleGUI.PySimpleGUI import WIN_CLOSED
+from typing import Match
+
 
 def openConnection(_dbFile):
     print("++++++++++++++++++++++++++++++++++")
@@ -33,39 +32,50 @@ def closeConnection(_conn, _dbFile):
 
 def printBulletData(_conn):
     try:
-        bulletHeaders = ['Caliber', 'Name', 'Damage', 'Penetration Power', 'Armor Damage', 'Accuracy Modifier', 'Recoil Modifier', 'Fragmentation Chance', 'Riccohet Chance', 'Light Bleed Modifier', 'Heavy Bleed Modifier', 'Velocity', 'Special', 'Vendors']
+        l = '{:<10} {:<10} {:>10} {:>10} {:>10} {:>10} {:>10} {:>10} {:>10} {:>10} {:>10} {:>10} {:>10} {:>10}'.format("Caliber", "Name", "Damage", "PenPwr","ArmorDmg", "AccMod", "RecMod", "FragChance", "RiccChance", "LBleed", "HBleed","Velocity", "Special", "Vendor")
+        print(l)
 
-        bulletData = _conn.execute("SELECT * FROM BulletData")
+        bulletInfo = _conn.fetchall()
 
-        bulletDat = bulletData.fetchall()
+        for row in bulletInfo:
+            output = '{:<10} {:<10} {:>10} {:>10} {:>10} {:>10} {:>10} {:>10} {:>10} {:>10} {:>10} {:>10} {:>10} {:>10}'.format(row[0], row[1], row[2], row[3],row[4], row[5], row[6], row[7], row[8], row[9], row[10], row[11], row[12], row[13])
+            print(output)
         
-        layout = [
-            [ui.Text('Escape from Tarkov Forum and Loadout')],
-            [ui.Table(bulletDat, headings=bulletHeaders, justification='left', key= "-BulletData-")],
-            [ui.Button('Next'), ui.Button('Exit')]
-        ]
 
-        return layout
     except Error as e:
         print(e)
 
-def getLayout(_conn, _query):
+def printVendors(_conn):
     try:
-        #bulletHeaders = ['Caliber', 'Name', 'Damage', 'Penetration Power', 'Armor Damage', 'Accuracy Modifier', 'Recoil Modifier', 'Fragmentation Chance', 'Riccohet Chance', 'Light Bleed Modifier', 'Heavy Bleed Modifier', 'Velocity', 'Special', 'Vendors']
+        l = '{:<10} {:<13} {:<10}'.format("Vendor ID", "Nickname", "Real Name")
+        print(l)
 
-        db = _conn.execute(_query)
+        query = """
+        SELECT *
+        FROM    Vendors;
+        """
+        vendorsList = _conn.execute(query)
 
-        headers = [description[0] for description in db.description]
+        vendorInfo = vendorsList.fetchall()
 
-        layoutForm = db.fetchall()
+        for row in vendorInfo:
+            output = '{:<10} {:<13} {:<10}'.format(row[0], row[1], row[2])
+            print(output)
 
-        layout = [
-            [ui.Text('Escape from Tarkov Bullets and Stuff')],
-            [ui.Table(layoutForm, headings=headers, justification='left', key= "-BulletData-")],
-            [ui.Button('Next'), ui.Button('Exit')]
-        ]
+    except Error as e:
+        print(e)
 
-        return layout
+def printGuns(_conn):
+    try:
+        l = '{:<10} {:<17} {:<30} {:<10} {:<10}'.format("Caliber", "Gun Name", "FireMode", "Rate of Fire", "Type")
+        print(l)
+
+        gunInfo = _conn.fetchall()
+
+        for row in gunInfo:
+            output = '{:<10} {:<17} {:<30} {:<10} {:<10}'.format(row[0], row[1], row[2], row[3], row[4])
+            print(output)
+
     except Error as e:
         print(e)
 
@@ -73,39 +83,226 @@ def getLayout(_conn, _query):
 def main():
 
     database = r"gunDB.sqlite"
-
     conn = openConnection(database)
+    # query = """
+    #     SELECT  v_codeName, b_caliburKey, b_dmg, p_price
+    #     FROM    Vendors, BulletData, Prices, Caliburs
+    #     WHERE   v_vendorKey = p_vendorKey
+    #     AND     p_calName = b_name
+    #     AND     c_caliburKey = b_caliburKey
+    #     AND     c_gunType != "SG"
+    #     ORDER BY    CAST(b_dmg AS INT) DESC;
+    # """
 
-    #query = "SELECT * FROM BulletData"
-
-    query = """
-        SELECT  v_codeName, b_caliburKey, b_dmg, p_price
-        FROM    Vendors, BulletData, Prices, Caliburs
-        WHERE   v_vendorKey = p_vendorKey
-        AND     p_calName = b_name
-        AND     c_caliburKey = b_caliburKey
-        AND     c_gunType != "SG"
-        ORDER BY    CAST(b_dmg AS INT) DESC;
-    """
-
-    layout = getLayout(conn, query)
-
-    window = ui.Window('Escape from Tarkov B&S', layout, finalize=True)
-
-    while True:
-        event, values = window.read()
-        if event == ui.WIN_CLOSED or event=='Exit':
-            break
-        
-        if event == "Next":
-            window['-BulletData-'].update("Hello")
-        print(event, values)
-        # if event == 'Next':
-        #     #Resizes the output Window
-        #     window['-OUTPUT-'].set_size((20,10))
-        #     window['-OUTPUT-'].update("Hi")
+    print("Welcome to the Escape from Tarkov Bullet Data Info Application")
     
-    window.close()
+
+    # 0 = Main Menu
+    menuLocation = 0
+
+    whatDo = 0
+    while menuLocation >=0:
+        if menuLocation is 0:
+            print("===============================================================================================================")
+            print("Please choose what you'd like to know about.")
+            print("Any Number Less than 0 will quit the app.")
+            print("1 - Bullet")
+            print("2 - Vendor")
+            print("3 - Guns")
+            print("4 - Grenades")
+            print("5 - Prices")
+            menuLocation = int(input(">> "))
+        if menuLocation is 1:
+            print("What do you want know about the bullets? (Return to main menu, use a negative number)")
+            print("1 - List all the bullet information")
+            print("2 - Where to find the bullets")
+            print("3 - Which Caliber")
+
+            whatDo = int(input(">> "))
+            if whatDo is 1:
+                query = """
+                SELECT *
+                FROM    BulletData;
+                """
+
+                sql = conn.execute(query)
+
+                printBulletData(sql)
+            elif whatDo is 2:
+                query ="""
+                SELECT *
+                FROM    BulletData
+                WHERE   b_vendorKey = ?;
+                """
+                print("How do you want to find the bullet?")
+                print("0 - Prapor")
+                print("1 - Therapist")
+                print("2 - Fence")
+                print("3 - Skier")
+                print("4 - PeaceKeeper")
+                print("5 - Mechanic")
+                print("6 - Jaeger")
+                print("7 - Ragman")
+                print("8 - Found in Raid or Crafted")
+                print("9 - Loot Only")
+
+                whichVendor = int(input(">> "))
+                args = [whichVendor]
+                sql = conn.execute(query, args)
+
+                printBulletData(sql)
+            elif whatDo is 3:
+                query ="""
+                SELECT      *
+                FROM        BulletData
+                WHERE       b_caliburKey = ?
+                ORDER BY    b_dmg DESC;
+                """
+                print("What caliber bullet are you looking for?")
+                print("0 - 7.62x25mm Tokarev| 10 - 7.62x39mm")
+                print("1 - 9x18mm Makarov   | 11 - 7.62x51mm NATO")
+                print("2 - 9x19mm Parabellum| 12 - 7.62x54Rmm")
+                print("3 - 9x21mm Gyurza    | 13 - .338 Lapua Magnum")
+                print("4 - .45 ACP          | 14 - 9x39mm")
+                print("5 - 4.6x30mm HK      | 15 - .366 TKM")
+                print("6 - 5.7x28mm FN      | 16 - 12.7x55mm STs-130")
+                print("7 - 5.45x39mm        | 17 - 12x70mm")
+                print("8 - 5.56x45mm NATO   | 18 - 20x70mm")
+                print("9 - .300 Blackout    | 19 - 23x75mm")
+
+                whichCal = int(input(">> "))
+                if whichCal is 0:
+                    args = ["7.62x25mm"]
+                elif whichCal is 1:
+                    args = ["9x18mm"]
+                elif whichCal is 2:
+                    args = ["9x19mm"]
+                elif whichCal is 3:
+                    args = ["9x21mm"]
+                elif whichCal is 4:
+                    args = [".45 ACP"]
+                elif whichCal is 5:
+                    args = ["4.6x30mm"]
+                elif whichCal is 6:
+                    args = ["5.7x28mm"]
+                elif whichCal is 7:
+                    args = ["5.45x39mm"]
+                elif whichCal is 8:
+                    args = ["5.56x45mm"]
+                elif whichCal is 9:
+                    args = [".300"]
+                elif whichCal is 10:
+                    args = ["7.62x39mm"]
+                elif whichCal is 11:
+                    args = ["7.62x51mm"]
+                elif whichCal is 12:
+                    args = ["7.62x54Rmm"]
+                elif whichCal is 13:
+                    args = [".338"]
+                elif whichCal is 14:
+                    args = ["9x39mm"]
+                elif whichCal is 15:
+                    args = [".366"]
+                elif whichCal is 16:
+                    args = ["12.7x55mm"]
+                elif whichCal is 17:
+                    args = ["12x70mm"]
+                elif whichCal is 18:
+                    args = ["20x70mm"]
+                elif whichCal is 19:
+                    args = ["23x75mm"]
+
+                sql = conn.execute(query, args)
+                printBulletData(sql)
+
+            if whatDo > 0:
+                menuLocation = 0
+        elif menuLocation is 2:
+            print("Here is a list of all the vendors.")
+            printVendors(conn)
+            menuLocation = 0
+        elif menuLocation is 3:
+            print("Which Gun are you looking for?")
+            print("0 - List all guns")
+            print("1 - Pistol")
+            print("2 - Submachine Gun")
+            print("3 - Assualt Rifle")
+            print("4 - Assualt Carbines")
+            print("5 - Designated Marksman Rifle")
+            print("6 - Sniper Rifle")
+            print("7 - Shotguns")
+            whatGun = int(input(">> "))
+
+            if whatGun is 0:
+                query = """
+                SELECT *
+                FROM    GunType;
+                """
+                sql = conn.execute(query)
+                printGuns(sql)
+            elif whatGun is 1:
+                query = """
+                SELECT *
+                FROM    GunType
+                WHERE   t_gunType LIKE "%Pistol%";
+                """
+                sql = conn.execute(query)
+                printGuns(sql)
+            elif whatGun is 2:
+                query = """
+                SELECT *
+                FROM    GunType
+                WHERE   t_gunType LIKE "%SMGs%";
+                """
+                sql = conn.execute(query)
+                printGuns(sql)
+            elif whatGun is 3:
+                query = """
+                SELECT *
+                FROM    GunType
+                WHERE   t_gunType LIKE "%AR%";
+                """
+                sql = conn.execute(query)
+                printGuns(sql)
+            elif whatGun is 4:
+                query = """
+                SELECT *
+                FROM    GunType
+                WHERE   t_gunType LIKE "%AC%";
+                """
+                sql = conn.execute(query)
+                printGuns(sql)
+            elif whatGun is 5:
+                query = """
+                SELECT *
+                FROM    GunType
+                WHERE   t_gunType LIKE "%DMR%";
+                """
+                sql = conn.execute(query)
+                printGuns(sql)
+            elif whatGun is 6:
+                query = """
+                SELECT *
+                FROM    GunType
+                WHERE   t_gunType LIKE "%Sniper Rifle%";
+                """
+                sql = conn.execute(query)
+                printGuns(sql)
+            elif whatGun is 7:
+                query = """
+                SELECT *
+                FROM    GunType
+                WHERE   t_gunType LIKE "%SG%";
+                """
+                sql = conn.execute(query)
+                printGuns(sql)
+
+            if whatGun < 0:
+                menuLocation = 0
+
+
+
+        
 
 if __name__ == '__main__':
     main()
