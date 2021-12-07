@@ -88,7 +88,7 @@ AND     b_name LIKE "%Slug%";
 SELECT DISTINCT  p_vendorKey ,b_name, b_dmg, p_price, p_currency
 FROM    BulletData, Prices
 WHERE   b_name = p_calName
-AND     p_vendorKey = "Prapor"
+AND     p_vendorKey = "0"
 GROUP BY b_name
 ORDER BY p_price DESC;
 
@@ -118,7 +118,7 @@ FROM    Prices;
 ------------- 19
 SELECT  *
 FROM    Prices
-WHERE   p_vendorKey = "Prapor";
+WHERE   p_vendorKey = "0";
 
 -- List all guns
 Select *
