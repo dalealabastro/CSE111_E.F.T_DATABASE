@@ -79,24 +79,81 @@ def printGuns(_conn):
     except Error as e:
         print(e)
 
+def printGrenades(_conn):
+    try:
+        l = '{:<10} {:<17} {:<20} {:<10} {:<20} {:<15}'.format("Grenade", "Type", "Delay", "Fragment", "Damage per Fragment", "Explosion Radius")
+        print(l)
+
+        boomInfo = _conn.fetchall()
+
+        for row in boomInfo:
+            output = '{:<10} {:<17} {:<20} {:<10} {:<20} {:<15}'.format(row[0], row[1], row[2], row[3], row[4], row[5])
+            print(output)
+
+    except Error as e:
+        print(e)
+
+def printPrices(_conn):
+    try:
+        l = '{:<10} {:<30} {:<20} {:<10}'.format("Vendor ID", "Caliber Name", "Currency", "Price")
+        print(l)
+
+        boomInfo = _conn.fetchall()
+
+        for row in boomInfo:
+            output = '{:<10} {:<30} {:<20} {:<10}'.format(row[0], row[1], row[2], row[3])
+            print(output)
+
+    except Error as e:
+        print(e)
+
+def printMultiVendorTable(_conn):
+    try:
+        l = '{:<13} {:<20} {:<20} {:<10} {:<10}'.format("Vendor", "Caliber", "Name", "Price", "Currency")
+        print(l)
+
+        multiInfo = _conn.fetchall()
+
+        for row in multiInfo:
+            output = '{:<13} {:<20} {:<20} {:<10} {:<10}'.format(row[0], row[1], row[2], row[3], row[4])
+            print(output)
+
+    except Error as e:
+        print(e)
+
+def printHighestDamageBullet(_conn):
+    try:
+        l = '{:<13} {:<20} {:<20} {:<10} '.format("Vendor", "Caliber", "Damage", "Price")
+        print(l)
+
+        multiInfo = _conn.fetchall()
+
+        for row in multiInfo:
+            output = '{:<13} {:<20} {:<20} {:<10} '.format(row[0], row[1], row[2], row[3])
+            print(output)
+
+    except Error as e:
+        print(e)
+
+def printMostExpensiveGrenade(_conn):
+    try:
+        l = '{:<13} {:<20} {:<20} '.format("Vendor", "Grenade", "Price")
+        print(l)
+
+        multiInfo = _conn.fetchall()
+
+        for row in multiInfo:
+            output = '{:<13} {:<20} {:<20}'.format(row[0], row[1], row[2])
+            print(output)
+
+    except Error as e:
+        print(e)
 
 def main():
 
     database = r"gunDB.sqlite"
     conn = openConnection(database)
-    # query = """
-    #     SELECT  v_codeName, b_caliburKey, b_dmg, p_price
-    #     FROM    Vendors, BulletData, Prices, Caliburs
-    #     WHERE   v_vendorKey = p_vendorKey
-    #     AND     p_calName = b_name
-    #     AND     c_caliburKey = b_caliburKey
-    #     AND     c_gunType != "SG"
-    #     ORDER BY    CAST(b_dmg AS INT) DESC;
-    # """
-
     print("Welcome to the Escape from Tarkov Bullet Data Info Application")
-    
-
     # 0 = Main Menu
     menuLocation = 0
 
@@ -111,6 +168,7 @@ def main():
             print("3 - Guns")
             print("4 - Grenades")
             print("5 - Prices")
+            print("6 - Complex Queries")
             menuLocation = int(input(">> "))
         if menuLocation is 1:
             print("What do you want know about the bullets? (Return to main menu, use a negative number)")
@@ -231,16 +289,16 @@ def main():
             print("5 - Designated Marksman Rifle")
             print("6 - Sniper Rifle")
             print("7 - Shotguns")
-            whatGun = int(input(">> "))
+            whatDo = int(input(">> "))
 
-            if whatGun is 0:
+            if whatDo is 0:
                 query = """
                 SELECT *
                 FROM    GunType;
                 """
                 sql = conn.execute(query)
                 printGuns(sql)
-            elif whatGun is 1:
+            elif whatDo is 1:
                 query = """
                 SELECT *
                 FROM    GunType
@@ -248,7 +306,7 @@ def main():
                 """
                 sql = conn.execute(query)
                 printGuns(sql)
-            elif whatGun is 2:
+            elif whatDo is 2:
                 query = """
                 SELECT *
                 FROM    GunType
@@ -256,7 +314,7 @@ def main():
                 """
                 sql = conn.execute(query)
                 printGuns(sql)
-            elif whatGun is 3:
+            elif whatDo is 3:
                 query = """
                 SELECT *
                 FROM    GunType
@@ -264,7 +322,7 @@ def main():
                 """
                 sql = conn.execute(query)
                 printGuns(sql)
-            elif whatGun is 4:
+            elif whatDo is 4:
                 query = """
                 SELECT *
                 FROM    GunType
@@ -272,7 +330,7 @@ def main():
                 """
                 sql = conn.execute(query)
                 printGuns(sql)
-            elif whatGun is 5:
+            elif whatDo is 5:
                 query = """
                 SELECT *
                 FROM    GunType
@@ -280,7 +338,7 @@ def main():
                 """
                 sql = conn.execute(query)
                 printGuns(sql)
-            elif whatGun is 6:
+            elif whatDo is 6:
                 query = """
                 SELECT *
                 FROM    GunType
@@ -288,7 +346,7 @@ def main():
                 """
                 sql = conn.execute(query)
                 printGuns(sql)
-            elif whatGun is 7:
+            elif whatDo is 7:
                 query = """
                 SELECT *
                 FROM    GunType
@@ -296,13 +354,94 @@ def main():
                 """
                 sql = conn.execute(query)
                 printGuns(sql)
+            else:
+                menuLocation = 0
+        elif menuLocation is 4:
+            print("Which Grenade are you looking for?")
+            print("0 - List all grenades")
+            print("1 - Most to least expensive grenade (Complex Query: 3 Tables)")
+            # print("2 - Submachine Gun")
+            # print("3 - Assualt Rifle")
+            # print("4 - Assualt Carbines")
+            # print("5 - Designated Marksman Rifle")
+            # print("6 - Sniper Rifle")
+            # print("7 - Shotguns")
+            whatDo = int(input(">> "))
 
-            if whatGun < 0:
+            if whatDo is 0:
+                query = """
+                SELECT *
+                FROM    GrenadeData;
+                """
+                sql = conn.execute(query)
+                printGrenades(sql)
+            if whatDo is 1:
+                query = """
+                SELECT      v_codeName, g_priceKey, p_price
+                FROM        Vendors, GrenadeData, Prices
+                WHERE       v_vendorKey = p_vendorKey
+                AND         p_calName = g_priceKey
+                GROUP BY    p_price
+                ORDER BY    p_price DESC;
+                """
+                sql = conn.execute(query)
+                printMostExpensiveGrenade(sql)
+            else:
+                menuLocation = 0
+        elif menuLocation is 5:
+            print("Bullet Prices")
+            print("0 - List all prices")
+            # print("1 - Pistol")
+            # print("2 - Submachine Gun")
+            # print("3 - Assualt Rifle")
+            # print("4 - Assualt Carbines")
+            # print("5 - Designated Marksman Rifle")
+            # print("6 - Sniper Rifle")
+            # print("7 - Shotguns")
+            whatDo = int(input(">> "))
+
+            if whatDo is 0:
+                query = """
+                SELECT *
+                FROM    Prices;
+                """
+                sql = conn.execute(query)
+                printPrices(sql)
+            else:
+                menuLocation = 0
+        elif menuLocation is 6:
+            print("Which Complex Query do you want to use?")
+            print("0 - Vendors which sell the same item. (Many2Many)")
+            print("1 - Highest Damage Bullet (Complex Query: 4 Tables)")
+
+            whatDo = int(input(">> "))
+            if whatDo is 0:
+                query = """
+                SELECT  v_codeName, b_caliburKey, b_name, p_price, p_currency
+                FROM    MultiVendors, Vendors, BulletData, Prices
+                WHERE   mv_calKey =  b_name
+                AND     mv_vendorKey = v_vendorKey
+                AND     p_calName = b_name;
+                """
+                sql = conn.execute(query)
+                printMultiVendorTable(sql)
+            elif whatDo is 1:
+                query = """
+                SELECT  v_codeName, b_caliburKey, b_dmg, p_price
+                FROM    Vendors, BulletData, Prices, Caliburs
+                WHERE   v_vendorKey = p_vendorKey
+                AND     p_calName = b_name
+                AND     c_caliburKey = b_caliburKey
+                AND     c_gunType != "SG"
+                ORDER BY    CAST(b_dmg AS INT) DESC;
+                """
+                sql = conn.execute(query)
+                printHighestDamageBullet(sql)
+
+            else:
                 menuLocation = 0
 
 
-
-        
 
 if __name__ == '__main__':
     main()
