@@ -7,6 +7,7 @@ def openConnection(_dbFile):
     print("++++++++++++++++++++++++++++++++++")
     print("Open database: ", _dbFile)
 
+
     conn = None
     try:
         conn = sqlite3.connect(_dbFile)
@@ -34,7 +35,7 @@ def printBulletData(_conn):
     try:
         l = '{:<10} {:<10} {:>10} {:>10} {:>10} {:>10} {:>10} {:>10} {:>10} {:>10} {:>10} {:>10} {:>10} {:>10}'.format("Caliber", "Name", "Damage", "PenPwr","ArmorDmg", "AccMod", "RecMod", "FragChance", "RiccChance", "LBleed", "HBleed","Velocity", "Special", "Vendor")
         print(l)
-
+        
         bulletInfo = _conn.fetchall()
 
         for row in bulletInfo:
@@ -95,13 +96,13 @@ def printGrenades(_conn):
 
 def printPrices(_conn):
     try:
-        l = '{:<10} {:<30} {:<20} {:<10}'.format("Vendor ID", "Caliber Name", "Currency", "Price")
+        l = '{:<15} {:<30} {:<20} {:<10}'.format("Vendor ID", "Caliber Name", "Currency", "Price")
         print(l)
 
         boomInfo = _conn.fetchall()
 
         for row in boomInfo:
-            output = '{:<10} {:<30} {:<20} {:<10}'.format(row[0], row[1], row[2], row[3])
+            output = '{:<15} {:<30} {:<20} {:<10}'.format(row[0], row[1], row[2], row[3])
             print(output)
 
     except Error as e:
@@ -360,7 +361,7 @@ def main():
             print("Which Grenade are you looking for?")
             print("0 - List all grenades")
             print("1 - Most to least expensive grenade (Complex Query: 3 Tables)")
-            # print("2 - Submachine Gun")
+            print("2 - Submachine Gun")
             # print("3 - Assualt Rifle")
             # print("4 - Assualt Carbines")
             # print("5 - Designated Marksman Rifle")
@@ -391,8 +392,8 @@ def main():
         elif menuLocation is 5:
             print("Bullet Prices")
             print("0 - List all prices")
-            # print("1 - Pistol")
-            # print("2 - Submachine Gun")
+            print("1 - Find bullet prices less than input")
+            print("2 - Find bullet prices above the input")
             # print("3 - Assualt Rifle")
             # print("4 - Assualt Carbines")
             # print("5 - Designated Marksman Rifle")
@@ -402,10 +403,39 @@ def main():
 
             if whatDo is 0:
                 query = """
-                SELECT *
-                FROM    Prices;
+                SELECT v_codename, p_calName, p_price, p_currency
+                FROM    Prices, Vendors
+                WHERE   p_vendorKey = v_vendorKey;
                 """
                 sql = conn.execute(query)
+                printPrices(sql)
+            elif whatDo is 1:
+                query = """
+                SELECT  v_codename, p_calName, p_price, p_currency
+                FROM    Prices, Vendors
+                WHERE   p_vendorKey = v_vendorKey
+                AND     p_price<?
+                ORDER BY CAST(p_price AS INT) DESC
+                """
+                bulletPrice = int(input("All bullets under what price?: "))
+                args = [bulletPrice]
+
+                sql = conn.execute(query, args)
+
+                printPrices(sql)
+            elif whatDo is 2:
+                query = """
+                SELECT  v_codename, p_calName, p_price, p_currency
+                FROM    Prices, Vendors
+                WHERE   p_vendorKey = v_vendorKey
+                AND     p_price>?
+                ORDER BY CAST(p_price AS INT) DESC
+                """
+                bulletPrice = int(input("All bullets above what price?: "))
+                args = [bulletPrice]
+
+                sql = conn.execute(query, args)
+
                 printPrices(sql)
             else:
                 menuLocation = 0
@@ -437,6 +467,8 @@ def main():
                 """
                 sql = conn.execute(query)
                 printHighestDamageBullet(sql)
+
+            
 
             else:
                 menuLocation = 0
